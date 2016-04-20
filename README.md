@@ -13,5 +13,5 @@ const char* resource = "/data/2.5/weather?q=Lucca&units=metric&APPID=ahdhk0031ll
 
 Please make sure you understand the terms of conditionals of Open Weather Map. There are limitations on the amount of requests you can do per minute.
 
-Look at Benoit Blancho excellent example code to learn how to use the library and select specific fields.
+Look at Benoit Blancho's excellent example code to learn how to use the library and select specific fields.
 
