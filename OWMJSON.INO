@@ -128,7 +128,7 @@ void loop(){
     
         for(int x=0; x<10; x++){ // wait for new connection with progress indicator
             Serial.print(".");
-            delay(99999);
+            delay(99999); // the OWM free plan API does NOT allow more then 60 calls per minute
         }
         
         Serial.println("");
