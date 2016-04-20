@@ -128,7 +128,7 @@ void loop(){
     
         for(int x=0; x<10; x++){ // wait for new connection with progress indicator
             Serial.print(".");
-            delay(9999);
+            delay(99999);
         }
         
         Serial.println("");
