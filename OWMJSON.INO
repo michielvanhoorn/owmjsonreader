@@ -65,6 +65,7 @@ void loop(){
     
         // connect to server  
         bool ok = client.connect(server, 80);
+        bool beginFound = false;
         
         while(!ok){
             //Serial.print(".");
@@ -100,6 +101,41 @@ void loop(){
         
         // process JSON
         DynamicJsonBuffer jsonBuffer;
+        
+        // But.....make sure the stream header is valid
+        // Sometime OWM includes invalid data after the header
+        // Parsing fails if this data is not removed
+        
+        if(int(response[0]) != 123){
+            Serial.println("Wrong start char detected");
+        int i = 0;
+        while(!beginFound){
+            if(int(response[i]) == 123){ // check for the "{" 
+            beginFound = true;
+            Serial.print("{ found at ");
+            Serial.println(i);
+            }
+            i++;
+        }
+
+            int eol = sizeof(response);
+            Serial.print("Length = ");
+            Serial.println(eol);
+  
+    
+            //restructure by shifting the correct data
+            Serial.println("restructure");
+            for(int c=0; c<(eol-i); c++){
+                response[c] = response[((c+i)-1)];
+                Serial.print(response[c]);
+            }
+     
+            Serial.println("Done...");
+
+                
+            }
+        
+        
         JsonObject& root = jsonBuffer.parseObject(response);
         
         if (!root.success()) {
