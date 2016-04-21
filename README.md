@@ -15,3 +15,8 @@ Please make sure you understand the terms of conditionals of Open Weather Map. T
 
 Look at Benoit Blancho's excellent example code to learn how to use the library and select specific fields.
 
+21.4.2016:
+Added a version of a Sketch which supports output to a PCD8544 / Nokia 5110 LCD. Mayor difference is the lack of Serial output. The LCD pins use the NodeMCU's serial pins. You can not have it all.
+
+Backlog:
+21.4.2016 Add support for longer stream with scrolling text. 
