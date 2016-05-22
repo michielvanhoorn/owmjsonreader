@@ -36,13 +36,13 @@
 #include <ArduinoJson.h>
 #include <ESP8266WiFi.h>
 
-const char* ssid     = "ARTEMIS";           // insert your SSID
-const char* password = "F2PR2o557b6O7hw";   // insert your password
+const char* ssid     = "SSID";           // insert your SSID
+const char* password = "Password";   // insert your password
 
 WiFiClient client;
 
 const char* server = "api.openweathermap.org";  // server's address
-const char* resource = "/data/2.5/weather?q=Lucca&units=metric&APPID=853261da305a067fd1e0baed812d635e"; // insert your API key
+const char* resource = "/data/2.5/weather?q=Lucca&units=metric&APPID=[yourAPI]"; // insert your API key
 
 char response[600]; // this fixed sized buffers works well for this project using the NodeMCU.
 
